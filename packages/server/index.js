@@ -36,7 +36,7 @@ io.on("connect", socket => {
 
   socket.on("dm", message => dm(socket, message));
 
-  socket.on("disconnecting", () => onDisconnect(socket));
+  socket.on("myDisconnect", () => onDisconnect(socket));
 });
 
 server.listen(process.env.PORT || 4000, () => {

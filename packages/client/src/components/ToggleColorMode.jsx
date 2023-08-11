@@ -9,7 +9,7 @@ const ToggleColorMode = () => {
       onClick={() => toggleColorMode()}
       pos="absolute"
       top="0"
-      right="0"
+      right="100"
       m="1rem"
     >
       {colorMode === "dark" ? (

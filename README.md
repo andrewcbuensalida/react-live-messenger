@@ -91,12 +91,19 @@ Now the error is
 Now trying 
   "scripts": {
 		"start": "react-scripts --openssl-legacy-provider start",
-It gets stuck again at 
+It gets stuck again at (not a bad thing)
   Note that the development build is not optimized.
   To create a production build, use npm run build.
 =================================
 
-Instead of starting redis and postgres above, probably could run docker compose up. His postgres container doesn't have tables either.
+Instead of starting redis and postgres above,  could run docker compose up. His postgres container doesn't have tables either. So have to go in docker desktop and create it.
 
 
-In docker compose yml, db port "5001:5432" means postman can hit 5001 and it will go to 5432 inside the postgres container. 
+In docker compose yml, db port "5001:5432" means postman/localhost can hit 5001 and it will go to 5432 inside the postgres container. 
+
+In docker compose, the db in db:5432 corresponds to the generated host that compose creates for the db service.
+
+===================================
+REDIS
+Get all keys
+  keys *
