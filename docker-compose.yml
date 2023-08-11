@@ -12,10 +12,12 @@ services:
       - "4000:4000"
     environment:
       - REDIS_HOST=redis
-      - DATABASE_URL=postgres://postgres:helloworld@db:5001/postgres
+      - DATABASE_URL=postgres://postgres:helloworld@db:5432/postgres?sslmode=disable
+      - CLIENT_URL=http://localhost:3000
+      - JWT_SECRET=myJwtSecret
   db:
     image: postgres
     ports:
-      - "5001:5001"
+      - "5001:5432"
     environment:
       - POSTGRES_PASSWORD=helloworld

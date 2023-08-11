@@ -9,9 +9,10 @@ import PrivateRoutes from "./PrivateRoutes";
 
 const Views = () => {
   const { user } = useContext(AccountContext);
-  return user.loggedIn === null ? (
-    <Text>Loading...</Text>
-  ) : (
+  // return user.loggedIn === null ? (
+  //   <Text>Loading...</Text>
+  // ) : (
+    return (
     <Routes>
       <Route path="/" element={<Login />} />
       <Route path="/register" element={<SignUp />} />
