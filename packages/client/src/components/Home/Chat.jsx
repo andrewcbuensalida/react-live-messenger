@@ -28,7 +28,7 @@ const Chat = ({ userid }) => {
               .filter(
                 msg => msg.to === friend.userid || msg.from === friend.userid
               )
-              .map((message, idx) => (
+              .map((message, idx) => (   
                 <Text
                   m={
                     message.to === friend.userid

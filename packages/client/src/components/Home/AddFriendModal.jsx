@@ -33,7 +33,7 @@ const AddFriendModal = ({ isOpen, onClose }) => {
             socket.emit(
               "add_friend",
               values.friendName,
-              ({ errorMsg, done, newFriend }) => {
+              ({ errorMsg, done, newFriend }) => { // this is called after server part is done
                 if (done) {
                   setFriendList(c => [newFriend, ...c]);
                   closeModal();

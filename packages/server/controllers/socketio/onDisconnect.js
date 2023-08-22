@@ -12,9 +12,11 @@ const onDisconnect = async socket => {
     0,
     -1
   );
+  // friendRooms is an array of userids
   const friendRooms = await parseFriendList(friendList).then(friends =>
     friends.map(friend => friend.userid)
   );
+  // emit to all friends that we went offline
   socket.to(friendRooms).emit("connected", false, socket.user.username);
 };
 

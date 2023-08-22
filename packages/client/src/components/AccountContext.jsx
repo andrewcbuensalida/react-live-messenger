@@ -12,7 +12,7 @@ const UserContext = ({ children }) => {
   const navigate = useNavigate();
   useEffect(() => {
     fetch(`${process.env.REACT_APP_SERVER_URL}/auth/login`, {
-      credentials: "include",
+      credentials: "include", // to include cookies
       headers: {
         authorization: `Bearer ${user.token}`,
       },

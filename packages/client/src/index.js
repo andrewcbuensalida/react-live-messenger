@@ -8,7 +8,8 @@ import theme from "./theme";
 
 ReactDOM.render(
   <React.StrictMode>
-    <HashRouter>
+    {/* use hash router because it's in production */}
+    <HashRouter> 
       <ChakraProvider theme={theme}>
         <ColorModeScript initialColorMode={theme.config.initialColorMode} />
         <App />

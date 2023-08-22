@@ -20,7 +20,7 @@ const attemptLogin = async (req, res) => {
         {
           username: req.body.username,
           id: potentialLogin.rows[0].id,
-          userid: potentialLogin.rows[0].userid,
+          userid: potentialLogin.rows[0].userid, // userid is so socketio knows who to send messages to
         },
         process.env.JWT_SECRET,
         { expiresIn: "7d" }

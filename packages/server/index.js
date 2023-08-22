@@ -2,7 +2,7 @@ const express = require("express");
 const { corsConfig } = require("./controllers/serverController");
 const { Server } = require("socket.io");
 const app = express();
-const helmet = require("helmet");
+const helmet = require("helmet"); // for security
 const cors = require("cors");
 const authRouter = require("./routers/authRouter");
 const {
@@ -22,9 +22,9 @@ const io = new Server(server, {
 
 app.use(helmet());
 app.use(cors(corsConfig));
-app.use(express.json());
+app.use(express.json()); // to be able to parse json
 app.use("/auth", authRouter);
-app.set("trust proxy", 1);
+app.set("trust proxy", 1); // headers will come from a different header than normal, because using nginx for reverse proxy 
 
 io.use(authorizeUser);
 io.on("connect", socket => {

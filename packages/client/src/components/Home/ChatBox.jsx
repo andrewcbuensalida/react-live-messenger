@@ -17,8 +17,8 @@ const ChatBox = ({ userid }) => {
       })}
       onSubmit={(values, actions) => {
         const message = { to: userid, from: null, content: values.message };
-        socket.emit("dm", message);
-        setMessages(prevMsgs => [message, ...prevMsgs]);
+        socket.emit("dm", message); 
+        setMessages(prevMsgs => [message, ...prevMsgs]); // probably should wait for emit dm's response
         actions.resetForm();
       }}
     >

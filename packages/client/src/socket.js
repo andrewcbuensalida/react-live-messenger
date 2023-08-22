@@ -5,7 +5,7 @@ const socket = user =>
     autoConnect: false,
     withCredentials: true,
     auth: {
-      token: user.token,
+      token: user.token, // This gets put in socket.handshake.auth in server
     },
   });
 

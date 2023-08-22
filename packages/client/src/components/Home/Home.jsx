@@ -15,7 +15,7 @@ export const SocketContext = createContext();
 const Home = () => {
 	const [friendList, setFriendList] = useState([]);
 	const [messages, setMessages] = useState([]);
-	const [friendIndex, setFriendIndex] = useState(0);
+	const [friendIndex, setFriendIndex] = useState(0); // this is the selected friend's index so chat knows what to filter in
 
 	const { user, setUser } = useContext(AccountContext);
 	const [socket, setSocket] = useState(() => socketConn(user));

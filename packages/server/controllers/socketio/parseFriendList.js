@@ -1,6 +1,6 @@
 const redisClient = require("../../redis");
 
-const parseFriendList = async friendList => {
+const parseFriendList = async friendList => { // converts friend string to object 
   const newFriendList = [];
   for (let friend of friendList) {
     const parsedFriend = friend.split(".");

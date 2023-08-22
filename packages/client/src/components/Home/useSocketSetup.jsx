@@ -8,10 +8,10 @@ const useSocketSetup = (setFriendList, setMessages, socket) => {
     socket.on("friends", friendList => {
       setFriendList(friendList);
     });
-    socket.on("messages", messages => {
+    socket.on("messages", messages => { // when initializing user
       setMessages(messages);
     });
-    socket.on("dm", message => {
+    socket.on("dm", message => { // when friend messages user
       setMessages(prevMsgs => [message, ...prevMsgs]);
     });
     socket.on("connected", (status, username) => {
