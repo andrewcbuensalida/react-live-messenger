@@ -4,7 +4,7 @@ const { createContext, useState, useEffect } = require("react");
 
 export const AccountContext = createContext();
 
-const UserContext = ({ children }) => {
+const AccountContextProvider = ({ children }) => {
   const [user, setUser] = useState({
     loggedIn: null,
     token: localStorage.getItem("token"),
@@ -37,7 +37,7 @@ const UserContext = ({ children }) => {
         navigate("/home");
       });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, []);// TODO add dependencies like user
   return (
     <AccountContext.Provider value={{ user, setUser }}>
       {children}
@@ -45,4 +45,4 @@ const UserContext = ({ children }) => {
   );
 };
 
-export default UserContext;
+export default AccountContextProvider;

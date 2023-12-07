@@ -3,6 +3,7 @@ import { AccountContext } from "./AccountContext";
 
 const { Outlet, Navigate } = require("react-router");
 
+// needs to be in separate file?
 const useAuth = () => {
   const { user } = useContext(AccountContext);
   return user && user.loggedIn;

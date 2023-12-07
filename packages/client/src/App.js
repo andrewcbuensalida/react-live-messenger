@@ -1,13 +1,13 @@
-import UserContext from "./components/AccountContext";
+import AccountContextProvider from "./components/AccountContext";
 import ToggleColorMode from "./components/ToggleColorMode";
 import Views from "./components/Views";
 
 function App() {
 	return (
-		<UserContext>
+		<AccountContextProvider>
 			<Views />
 			<ToggleColorMode />
-		</UserContext>
+		</AccountContextProvider>
 	);
 }
 
