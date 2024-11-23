@@ -4,7 +4,7 @@ const parseFriendList = require("./parseFriendList");
 
 const initializeUser = async (socket) => {
 	socket.join(socket.user.userid); // joining a room, so we can use "to" when emitting.
-	await redisClient.hset(
+	await redisClient.hmset(
 		`userid:${socket.user.username}`, // this is the name of the hashmap
 		"userid", // key
 		socket.user.userid, // value

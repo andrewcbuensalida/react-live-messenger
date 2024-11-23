@@ -1,0 +1,11 @@
+DATABASE_NAME=messenger
+DATABASE_USER=postgres
+DATABASE_PASSWORD=admin
+DATABASE_HOST=localhost
+DATABASE_PORT=5001
+
+REDIS_HOST=localhost
+
+CLIENT_URL=http://localhost:3000
+
+JWT_SECRET=secret

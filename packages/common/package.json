@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "@whatsapp-clone/common": "file:",
     "yup": "^0.32.11"
   }
 }
